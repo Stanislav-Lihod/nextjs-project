@@ -10,16 +10,28 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
+import Image from "next/image";
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
     <form className="space-y-3" action={dispatch}>
-      <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
+      <div className="flex-1 rounded-lg bg-slate-300 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please log in to continue.
         </h1>
+        <div className="w-full px-2.5 rounded-md py-2.5 bg-amber-200">
+          <p className={`${lusitana.className} text-center`}>
+            This is a test project, so please use following credential to log in
+          </p>
+          <Image
+            src="/log.png"
+            alt="log"
+            width={1000}
+            height={1000}
+          />
+        </div>
         <div className="w-full">
           <div>
             <label
